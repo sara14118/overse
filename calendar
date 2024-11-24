@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tui Calendar</title>
+  <link rel="stylesheet" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.min.js"></script>
+  <script src="https://uicdn.toast.com/tui-time-picker/latest/tui-time-picker.min.js"></script>
+</head>
+<body>
+  <div id="calendar"></div>
+  <script>
+    $(document).ready(function() {
+      var calendar = new tui.Calendar('#calendar', {
+        defaultView: 'month',
+        taskView: ['task'],
+        scheduleView: ['time'],
+        useCreationPopup: true,
+        useDetailPopup: true,
+      });
+
+      calendar.createSchedules([
+        {
+          id: '1',
+          calendarId: '1',
+          title: 'Meeting with User 1',
+          category: 'time',
+          dueDateClass: '',
+          start: '2024-11-25T10:00:00',
+          end: '2024-11-25T11:00:00',
+        },
+        {
+          id: '2',
+          calendarId: '1',
+          title: 'Conference Call',
+          category: 'time',
+          start: '2024-11-26T14:00:00',
+          end: '2024-11-26T15:00:00',
+        }
+      ]);
+    });
+  </script>
+</body>
+</html>
